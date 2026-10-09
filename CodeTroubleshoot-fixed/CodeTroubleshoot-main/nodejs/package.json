@@ -1,0 +1,16 @@
+{
+  "name": "book-management",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "db:init": "node src/database/init.js",
+    "test": "jest --runInBand"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}

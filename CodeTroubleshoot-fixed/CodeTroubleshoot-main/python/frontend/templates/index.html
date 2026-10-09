@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scribe</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">Recognition</p>
+      <h1>Scribe</h1>
+    </div>
+  </header>
+  <main>
+    <section class="panel upload-panel">
+      <label class="dropzone" id="dropzone">
+        <input id="image-input" type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png">
+        <span>Choose a JPG or PNG image</span>
+      </label>
+      <img id="preview" class="preview" alt="Uploaded image preview" hidden>
+      <button type="button" id="process" disabled>Process</button>
+      <p id="message" class="message" role="alert"></p>
+    </section>
+    <section class="panel result-panel" id="result-panel" hidden>
+      <div class="result-meta">
+        <h2>Recognized text</h2>
+        <p id="timing"></p>
+      </div>
+      <textarea id="result-text" rows="8" readonly></textarea>
+      <img id="processed" class="preview" alt="Processed image" hidden>
+      <div class="actions">
+        <button type="button" id="copy-text">Copy text</button>
+        <button type="button" id="download-text" class="secondary">Download text</button>
+      </div>
+    </section>
+  </main>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

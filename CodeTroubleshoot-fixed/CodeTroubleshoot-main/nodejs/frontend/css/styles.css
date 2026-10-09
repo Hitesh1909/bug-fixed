@@ -1,0 +1,278 @@
+:root {
+  --ink: #1c2430;
+  --muted: #5e6876;
+  --paper: #f3ecdf;
+  --card: #fffaf3;
+  --line: #e2d5c3;
+  --header: #1b3a2f;
+  --header-ink: #f6f1e7;
+  --accent: #c4622d;
+  --accent-ink: #fff8f3;
+  --danger: #8d2f2f;
+  --shadow: 0 16px 40px rgba(48, 36, 20, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(196, 98, 45, 0.12), transparent 28rem),
+    var(--paper);
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.site-header {
+  background: var(--header);
+  color: var(--header-ink);
+}
+
+.header-inner,
+.nav,
+main {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 28px 0 22px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+h1,
+h2 {
+  font-family: Palatino, "Palatino Linotype", Georgia, serif;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.total {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.nav {
+  display: flex;
+  padding: 14px 0 0;
+}
+
+.nav-link {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+  font-weight: 650;
+}
+
+main {
+  padding: 22px 0 48px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.stat-card,
+.panel,
+dialog {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.stat-card {
+  padding: 16px 18px;
+}
+
+.stat-card span,
+.stat-list li span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.6rem;
+  font-family: Palatino, "Palatino Linotype", Georgia, serif;
+}
+
+.stat-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.stat-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.panel {
+  padding: 18px;
+}
+
+/* FIX: toolbar wraps instead of forcing a 900px minimum width */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.toolbar input,
+.toolbar select,
+dialog input,
+button {
+  font: inherit;
+}
+
+.toolbar input,
+.toolbar select {
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+#search {
+  flex: 1 1 240px;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.secondary,
+#cancel-form {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+button.danger {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid #efc8c4;
+}
+
+/* FIX: fluid width, scrolls inside the wrapper instead of overflowing the page */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.books-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.books-table th,
+.books-table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.books-table th {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stock-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.message {
+  min-height: 1.2em;
+  color: var(--danger);
+}
+
+dialog {
+  width: min(480px, calc(100% - 24px));
+  padding: 22px;
+  border: 1px solid var(--line);
+}
+
+dialog::backdrop {
+  background: rgba(28, 36, 48, 0.45);
+}
+
+dialog form {
+  display: grid;
+  gap: 12px;
+}
+
+dialog h2 {
+  margin: 0;
+}
+
+dialog label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+dialog input {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--ink);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
